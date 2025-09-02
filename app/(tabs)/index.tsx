@@ -55,7 +55,6 @@ export default function HomeScreen() {
     connectToDevice,
     disconnectDevice,
     getDiagnostics,
-    forceReinitialize,
   } = useBluetoothWater();
   
   // Fallback simulation when Bluetooth is not connected
@@ -70,6 +69,7 @@ export default function HomeScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [currentTip, setCurrentTip] = useState(getMotivationalTip());
   const [previousWaterLevel, setPreviousWaterLevel] = useState(currentWaterLevel);
+  const [showDeviceSelector, setShowDeviceSelector] = useState(false);
 
   // Fallback simulation when not connected to Bluetooth
   useEffect(() => {
@@ -928,3 +928,4 @@ const styles = StyleSheet.create({
     height: Spacing.xxl,
   },
 });
+
